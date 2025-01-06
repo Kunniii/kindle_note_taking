@@ -25,7 +25,7 @@ function updateNote() {
 function exportToTxt() {
   const noteName = noteNameInput.value || 'untitled';
   const noteContent = noteTextarea.value;
-  const blob = new Blob([noteContent], { type: 'text/plain;charset=utf-8' }); // Added charset
+  const blob = new Blob([noteContent], { type: 'text/plain;charset=utf-8' });
   const link = document.createElement('a');
   link.href = URL.createObjectURL(blob);
   link.download = `${noteName}.txt`;
@@ -33,3 +33,9 @@ function exportToTxt() {
   URL.revokeObjectURL(link.href);
 }
 
+
+function clearText() {
+  noteTextarea.value = "";
+  noteNameInput.value = "";
+  localStorage.removeItem('noteData');
+}
