@@ -13,16 +13,12 @@
     </div>
     <textarea id="note"></textarea>
 
-    <div id="clearModal" class="modal">
-      <div class="modal-content">
-        <p>Are you sure you want to clear the note?</p>
-        <div class="modal-buttons">
-          <button onclick="saveAndClear()">Save Note</button>
-          <button id="clear-note" onclick="deleteAnyway()">
-            Delete Anyway
-          </button>
-          <button onclick="closeModal()">Cancel</button>
-        </div>
+    <div id="clearConfirm" style="display: none" class="clear-confirm">
+      <p>Are you sure you want to clear the note?</p>
+      <div class="clear-confirm-buttons">
+        <button onclick="saveAndClear()">Save Note</button>
+        <button onclick="deleteAnyway()">Delete Anyway</button>
+        <button onclick="closeClearConfirm()">Cancel</button>
       </div>
     </div>
 

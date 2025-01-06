@@ -1,7 +1,7 @@
 const noteNameInput = document.getElementById("noteName");
 const noteTextarea = document.getElementById("note");
 const fileInput = document.getElementById("fileInput");
-const clearModal = document.getElementById("clearModal");
+const clearConfirm = document.getElementById("clearConfirm");
 
 // Load from localStorage on page load
 window.addEventListener("load", () => {
@@ -37,23 +37,23 @@ function exportToTxt() {
   URL.revokeObjectURL(link.href);
 }
 
-function openClearModal() {
-  clearModal.style.display = "flex";
+function openClearConfirm() {
+  clearConfirm.style.display = "block";
 }
 
-function closeModal() {
-  clearModal.style.display = "none";
+function closeClearConfirm() {
+  clearConfirm.style.display = "none";
 }
 
 function saveAndClear() {
   exportToTxt(); // Save the note first
   clearText();
-  closeModal();
+  closeClearConfirm();
 }
 
 function deleteAnyway() {
   clearText();
-  closeModal();
+  closeClearConfirm();
 }
 
 function clearText() {
